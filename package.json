@@ -2,10 +2,10 @@
     "name": "@js-ninja/map-storage",
     "version": "1.0.6",
     "description": "Efficient TypeScript key-value storage using Map.",
-    "homepage": "https://github.com/RErokho/ninja-map-storage#readme",
+    "homepage": "https://github.com/rdn-js-ninja/map-storage#readme",
     "repository": {
         "type": "git",
-        "url": "https://github.com/RErokho/ninja-map-storage.git"
+        "url": "https://github.com/rdn-js-ninja/map-storage.git"
     },
     "license": "MIT",
     "engines": {
