@@ -1,0 +1,65 @@
+{
+    "name": "@js-ninja/map-storage",
+    "version": "1.0.5",
+    "description": "Efficient TypeScript key-value storage using Map.",
+    "homepage": "https://github.com/RErokho/ninja-map-storage#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/RErokho/ninja-map-storage.git"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=20"
+    },
+    "authors": [
+        {
+            "name": "Radzislau Yarokha",
+            "url": "https://github.com/RErokho"
+        }
+    ],
+    "keywords": [
+        "typescript",
+        "map",
+        "key-value",
+        "storage",
+        "data management"
+    ],
+    "main": "lib/index.js",
+    "types": "lib/declarations/index.d.ts",
+    "files": [
+        "lib/index.js",
+        "lib/declarations/**/*.d.ts"
+    ],
+    "scripts": {
+        "development": "cross-env NODE_ENV=development webpack",
+        "production": "cross-env NODE_ENV=production webpack && npm run declarations",
+        "declarations": "tsc ./src/index.ts --declaration --outDir ./lib/declarations --emitDeclarationOnly",
+        "template-commit-patch": "git add . && git commit -m \"update\"",
+        "template-patch": "npm version patch",
+        "template-publish": "npm run template-patch && npm publish",
+        "publish-patch": "npm i && npm run template-publish",
+        "commit-and-publish-patch": "npm run template-commit-patch && npm run publish-patch",
+        "prepublishOnly": "npm run production && npm run declarations"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.23.0",
+        "@babel/core": "^7.23.2",
+        "@babel/preset-env": "^7.23.2",
+        "@types/node": "^20.8.10",
+        "@types/webpack-node-externals": "^3.0.4",
+        "babel-loader": "^9.1.3",
+        "cross-env": "^7.0.3",
+        "terser-webpack-plugin": "^5.3.9",
+        "ts-loader": "^9.5.0",
+        "ts-node": "^10.9.1",
+        "tslib": "^2.6.2",
+        "typescript": "^5.2.2",
+        "webpack": "^5.89.0",
+        "webpack-cli": "^5.1.4",
+        "webpack-node-externals": "^3.0.0"
+    },
+    "private": false,
+    "dependencies": {
+        "@js-ninja/list": "^1.0.13"
+    }
+}
