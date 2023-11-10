@@ -34,10 +34,10 @@
         "development": "cross-env NODE_ENV=development webpack",
         "production": "cross-env NODE_ENV=production webpack && npm run declarations",
         "declarations": "tsc ./src/index.ts --declaration --outDir ./lib/declarations --emitDeclarationOnly",
-        "template-commit-patch": "git add . && git commit -m \"update\"",
+        "template-commit-patch": "git add . && git commit -m \"patch\"",
         "template-patch": "npm version patch",
         "template-publish": "npm run template-patch && npm publish",
-        "publish-patch": "npm i && npm run template-publish",
+        "publish-patch": "npm i && npm run template-publish && git push origin main",
         "commit-and-publish-patch": "npm run template-commit-patch && npm run publish-patch",
         "prepublishOnly": "npm run production && npm run declarations"
     },
